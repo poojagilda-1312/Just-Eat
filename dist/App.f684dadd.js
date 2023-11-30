@@ -36816,24 +36816,34 @@ var Header = function Header() {
     btnName = _useState2[0],
     setBtnName = _useState2[1];
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "Header"
+    className: "flex justify-between bg-pink-100 shadow-lg"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "Logo-container"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "Logo",
+    className: "w-40",
     src: _constants.LOGO_URL
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "nav-items"
-  }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    className: "flex items-center"
+  }, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "flex p-4 m-4 "
+  }, /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-4"
+  }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     className: "links",
     to: "/"
-  }, "Home "), " "), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "Home "), " "), /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-4"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     className: "links",
     to: "/about"
-  }, "About Us "), " "), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "About Us "), " "), /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-4"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     className: "links",
     to: "/contact"
-  }, "Contact Us"), " "), /*#__PURE__*/_react.default.createElement("li", null, "Cart"), /*#__PURE__*/_react.default.createElement("button", {
+  }, "Contact Us"), " "), /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-4"
+  }, "Cart"), /*#__PURE__*/_react.default.createElement("button", {
     className: "login",
     onClick: function onClick() {
       btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
@@ -36853,12 +36863,6 @@ var _react = _interopRequireDefault(require("react"));
 var _constants = require("../utils/constants");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var RestaurantCard = function RestaurantCard(resData) {
-  // /wait/now here we are not destru the res data see ok 
-  // so we are passing OBJECT from there and also we are not destr it here so it is like object inside object {{}}
-  // yes yesss i commented so i have to do two times res data
-  // and i m also calling resdata... jo object waha se aa rha same nam look above
-  //wait a sec 
-  //   console.log(props)  it is an javascript object 
   var _resData$resData = resData.resData,
     name = _resData$resData.name,
     cloudinaryImageId = _resData$resData.cloudinaryImageId,
@@ -36867,11 +36871,12 @@ var RestaurantCard = function RestaurantCard(resData) {
     costForTwo = _resData$resData.costForTwo,
     sla = _resData$resData.sla;
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "res-card"
+    className: "m-4 p-4 w-52 rounded-lg bg-gray-100 hover:bg-gray-200"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "res-logo",
     src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/".concat(resData.resData.cloudinaryImageId)
-  }), /*#__PURE__*/_react.default.createElement("h3", null, " ", name, " "), /*#__PURE__*/_react.default.createElement("h4", null, cuisines.join(" , "), " "), /*#__PURE__*/_react.default.createElement("h4", null, avgRatingString, " "), /*#__PURE__*/_react.default.createElement("h4", null, " ", sla.deliveryTime), /*#__PURE__*/_react.default.createElement("h4", null, costForTwo));
+  }), /*#__PURE__*/_react.default.createElement("h3", {
+    className: "font-bold"
+  }, " ", name, " "), /*#__PURE__*/_react.default.createElement("h4", null, cuisines.join(" , "), " "), /*#__PURE__*/_react.default.createElement("h4", null, avgRatingString, " "), /*#__PURE__*/_react.default.createElement("h4", null, " ", sla.deliveryTime), /*#__PURE__*/_react.default.createElement("h4", null, costForTwo));
 };
 var _default = RestaurantCard;
 exports.default = _default;
@@ -37499,12 +37504,12 @@ var Body = function Body() {
             return data.json();
           case 5:
             json = _context.sent;
-            // console.log(json, "this is the perent object ")
+            console.log(json, "this is the perent object ");
             //  console.log(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants, " adding this into setter ")
             setListOfRestaurant(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
             setFilteredRestaurant(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
             // console.log(ListOfHotel,"lost of hotel just after setter")
-          case 8:
+          case 9:
           case "end":
             return _context.stop();
         }
@@ -37515,19 +37520,20 @@ var Body = function Body() {
     };
   }();
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "body"
+    className: "body "
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "filter"
+    className: "filter flex"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "search"
+    className: "search m-4 p-4 "
   }, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
-    className: "search-box",
+    className: "border border-solid border-black",
     value: searchText,
     onChange: function onChange(e) {
       setSearchText(e.target.value);
     }
   }), /*#__PURE__*/_react.default.createElement("button", {
+    className: "px-3 py-1 bg-green-100 m-4 rounded-lg",
     onClick: function onClick() {
       console.log("api calllll");
       var filteredRestaurant = ListOfRestaurant.filter(function (doremon) {
@@ -37539,8 +37545,10 @@ var Body = function Body() {
       //  console.log(filteredRestaurant)
       setFilteredRestaurant(filteredRestaurant);
     }
-  }, "Search  ")), /*#__PURE__*/_react.default.createElement("button", {
-    className: "filter-btn",
+  }, "Search  ")), /*#__PURE__*/_react.default.createElement("div", {
+    className: " m-4 p-4 flex items-center"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "px-4 py-2 bg-gray-50 rounded-lg ",
     onClick: function onClick() {
       //  console.log(res.info ,"hres data ")
       var filteredList = ListOfRestaurant.filter(function (res) {
@@ -37549,8 +37557,8 @@ var Body = function Body() {
       // console.log(filteredList, "helloooo")
       setFilteredRestaurant(filteredList);
     }
-  }, "Top Rated Restaurant "), " "), /*#__PURE__*/_react.default.createElement("div", {
-    className: "res-container"
+  }, "Top Rated Restaurant "))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "flex flex-wrap"
   }, filteredRestaurant.map(function (restaurant) {
     {/* console.log(restaurant) */}
     return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -37589,7 +37597,7 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var About = function About() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "About "), /*#__PURE__*/_react.default.createElement("h2", null, " this is namste React web series "));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "About "), /*#__PURE__*/_react.default.createElement("h2", null, " this is about page  "));
 };
 var _default = About;
 exports.default = _default;
@@ -37884,7 +37892,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50762" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56838" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
