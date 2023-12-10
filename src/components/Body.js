@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import ReactDom from "react-dom/client" 
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
 import { useState } from "react";
 import resList from "../utils/mockdata";
 import {Link} from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 const Body = () => {  
     const [ListOfRestaurant,setListOfRestaurant] = useState([]);
     // const [ListOfHotel,setListOfHotel] = useState([]);
     const [searchText , setSearchText] = useState([])
     const [filteredRestaurant,setFilteredRestaurant] = useState([]);
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
     // const [filteredRestaurant,setFilteredRestaurant] = useState([])
     //whenever state variable update, react triggers a reconciliation  cycle (re-renders the component)
     useEffect(() => {
@@ -27,6 +29,9 @@ const Body = () => {
         // console.log(ListOfHotel,"lost of hotel just after setter")
 
     };
+    if(ListOfRestaurant.length ===0){
+      return <Shimmer/>
+    }
     return (
     <div className="body ">
       <div className="filter flex">  
@@ -57,21 +62,15 @@ const Body = () => {
             }}>
             Top Rated Restaurant </button> 
        </div>
-      
-            </div>
-            
+              </div>        
             <div className="flex flex-wrap">
-        
-            { 
+        {
                   filteredRestaurant.map ((restaurant) => {
                   {/* console.log(restaurant) */}
                   return  <Link  key ={restaurant.info.id} to={"/restaurants/" +restaurant.info.id}>
                    <RestaurantCard  resData={restaurant.info}/>  </Link>
                     })
                 }
-                {/* <RestaurantCard resData = {resList[0]} /> */}
-                {/* <RestaurantCard resName= "Dominos" cuisine = "pizza"/> */}
-             
             </div>
     
     </div>
