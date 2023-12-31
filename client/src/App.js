@@ -5,7 +5,7 @@ import Body from "./components/Body";
 import Error from "./components/Error";
 import About from "./components/About";
 import Register from "./components/Register";
-import RestaurantMenu from "./components/Restaurantmenu";
+import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
