@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   //subscribing to our store
   const cartItem = useSelector((store) => store.cart.items);
-  // console.log(cartItem);
+
   const [btnName, setBtnName] = useState("Login");
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
@@ -31,11 +31,10 @@ const Header = () => {
               Register
             </Link>{" "}
           </li>
-          <li className="px-4 font-bold text-xl">
-          <Link className="links" to="/Cart">
-          Cart ({cartItem.length}item )
+          <li className="px-4">
+            <Link className="links" to="/Cart">
+              Cart ({cartItem.length}item )
             </Link>{" "}
-            
           </li>
           <li className="px-4">
             {" "}
@@ -43,11 +42,6 @@ const Header = () => {
               Login
             </Link>{" "}
           </li>
-          {/* <button className="login" onClick={() => {
-        btnName === "Login"
-         ? setBtnName("Logout") 
-         : setBtnName("Login") ;
-        }} > {btnName} </button> */}
         </ul>
       </div>
     </div>

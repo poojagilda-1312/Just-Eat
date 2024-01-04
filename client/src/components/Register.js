@@ -14,7 +14,6 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form data is submitted", formData);
   };
   return (
     <>
@@ -47,7 +46,7 @@ const Register = () => {
             className="w-full p-2 border border-black rounded mt-1"
           />
         </label>
- 
+
         <label className="block mb-2">
           PhoneNo
           <input

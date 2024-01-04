@@ -1,22 +1,17 @@
-import { useState } from "react"
-import React  from 'react'
+import { useState } from "react";
+import React from "react";
 
 const Login = () => {
-    const [formData, setformData] = useState({
-    
-        email: "",
-        
-        Password: "",
-      });
-      const handleInputChange=()=>{
-        
-      }
-    const handleSubmit=()=>{
+  const [formData, setformData] = useState({
+    email: "",
 
-    }
+    Password: "",
+  });
+  const handleInputChange = () => {};
+  const handleSubmit = () => {};
   return (
-  <>
-     <form
+    <>
+      <form
         className="max-w-md   mx-auto p-4 border rounded shadow-md"
         onSubmit={handleSubmit}
       >
@@ -51,7 +46,7 @@ const Login = () => {
           Login
         </button>
       </form>
-  </>
-  )
-}
-export default Login 
+    </>
+  );
+};
+export default Login;

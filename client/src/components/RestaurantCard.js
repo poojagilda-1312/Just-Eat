@@ -1,7 +1,7 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (resData) => {
-    console.log(resData)
+   
    const {name ,cloudinaryImageId,avgRatingString, cuisines,costForTwo,sla} = resData.resData
     return (
         <div className="m-4 p-4 w-52 h-96 rounded-lg bg-gray-100 hover:bg-gray-200">
@@ -13,12 +13,12 @@ const RestaurantCard = (resData) => {
            
            <h4> {sla.deliveryTime}</h4>    
            <h4>{costForTwo}</h4>    
-          {/* { console.log(resData.resData.name )} */}     
+    
         </div>  
     )
 
   }
-  //high order component //functiom taing input 
+  //high order component /
  export const withPromotedLabel =(RestaurantCard)=>{
     return (props)=>{
 return (
