@@ -18,6 +18,7 @@ const RestaurantMenu = () => {
 
   // Call the 'useRestaurantMenu' hook with 'resID' to fetch restaurant information.
   const resInfo = useRestaurantMenu(resID);
+  console.log(resInfo);
   if (resInfo === null) {
     return <p>Loading...</p>;
   }
@@ -26,7 +27,7 @@ const RestaurantMenu = () => {
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
-
+  console.log(itemCards + "itemcards");
   const categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>

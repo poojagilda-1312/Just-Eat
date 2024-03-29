@@ -5,6 +5,7 @@ import { useState } from "react";
 import resList from "../utils/mockdata";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
+// import json from "../utils/resData.json";
 const Body = () => {
   const [ListOfRestaurant, setListOfRestaurant] = useState([]);
 
@@ -18,10 +19,11 @@ const Body = () => {
   const fetchData = async () => {
     const latitude = 22.7195687;
     const longitude = 75.8577258;
-    //  const apiUrl = `https://corsproxy.org/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&collection=83637`;
+    // const apiUrl = `https://corsproxy.org/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&collection=83637`;
+    // const apiUrl =
+    //   "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D22.7195687%26lng%3D75.8577258";
     const apiUrl =
-      "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D22.7195687%26lng%3D75.8577258";
-
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2701948&lng=73.0569832&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
     const data = await fetch(apiUrl);
     const json = await data.json();
 
